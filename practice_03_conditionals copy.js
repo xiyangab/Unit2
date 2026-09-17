@@ -14,7 +14,17 @@
 //   "negative even"   if num is negative and even
 //   "negative odd"    if num is negative and odd
 function classifyNumber(num) {
-  // TODO: your code here
+  if (num === 0) {
+    return "zero";
+  } else if (num > 0 && num % 2 === 0) {
+    return "postive even";
+  } else if (num > 0 && num % 2 !== 0) {
+    return "postive odd";
+  } else if (num < 0 && num % 2 === 0) {
+    return "negative even";
+  } else if (num < 0 && num % 2 !== 0) {
+    return "negative odd";
+  }
 }
 
 console.log(classifyNumber(0)); // "zero"
@@ -32,7 +42,19 @@ console.log(classifyNumber(-7)); // "negative odd"
 //   below 60 -> "F"
 // If score is less than 0 or greater than 100, return "Invalid score".
 function getLetterGrade(score) {
-  // TODO: your code here
+  if (score < 0 || score > 100) {
+    return "Invalid score";
+  } else if (score >= 90 && score <= 100) {
+    return "A";
+  } else if (score >= 80 && score <= 89) {
+    return "B";
+  } else if (score >= 70 && score <= 79) {
+    return "C";
+  } else if (score >= 60 && score <= 69) {
+    return "D";
+  } else if (score < 60 && score >= 0) {
+    return "F";
+  }
 }
 
 console.log(getLetterGrade(95)); // "A"
@@ -48,7 +70,15 @@ console.log(getLetterGrade(150)); // "Invalid score"
 //   "FizzBuzz" if num is divisible by both 3 and 5
 //   otherwise, num converted to a string
 function fizzBuzz(num) {
-  // TODO: your code here
+  if (num % 3 === 0 && num % 5 === 0) {
+    return "FizzBuzz";
+  } else if (num % 3 === 0) {
+    return "Fizz";
+  } else if (num % 5 === 0) {
+    return "Buzz";
+  } else {
+    return String(num);
+  }
 }
 
 console.log(fizzBuzz(3)); // "Fizz"
@@ -65,7 +95,21 @@ console.log(fizzBuzz(7)); // "7"
 //   weight <= 5  -> 8
 //   weight > 5   -> 12
 function getShippingCost(weight, isMember) {
-  // TODO: your code here (nested conditional — check isMember first, then weight)
+  if (isMember === true) {
+    if (weight <= 5) {
+      return "Shipping: Free";
+    } else {
+      return "Shipping: $3";
+    }
+  } else if (isMember === false) {
+    if (weight <= 1) {
+      return "Shipping: $5";
+    } else if (weight <= 5) {
+      return "Shipping: $8";
+    } else if (weight > 5) {
+      return "Shipping: $12";
+    }
+  }
 }
 
 console.log(getShippingCost(3, true)); // 0
